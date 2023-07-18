@@ -1,0 +1,69 @@
+name: Gatsby CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sast:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install ESLint
+      run: npm install eslint --global
+
+    - name: ESLint check
+      run: eslint .
+
+  build:
+
+    runs-on: ubuntu-latest
+    
+    needs: sast
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Use Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+
+    - name: Test
+      run: npm run test
+
+    - name: Build
+      run: npm run build
+
+  deploy:
+
+    runs-on: ubuntu-latest
+
+    needs: build
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.0
+      with:
+        branch: gh-pages
+        folder: public
+
+
+
