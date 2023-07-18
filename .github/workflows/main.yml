@@ -68,7 +68,7 @@ jobs:
       with:
         branch: gh-pages
         folder: deploy # The folder the action should deploy.
-        github_token: ${{ env.DEPLOY_TOKEN }}
+        token: ${{ env.DEPLOY_TOKEN }}
 
 
 
