@@ -24,6 +24,7 @@
     "gatsby-source-filesystem": "alpha-9689ff",
     "gatsby-transformer-remark": "alpha-9689ff",
     "gatsby-transformer-sharp": "alpha-9689ff",
+    "gatsby-core-utils": "alpha-9689ff",
     "isomorphic-fetch": "2.2.1",
     "prismjs": "^1.24.1",
     "react": "^17.0.1",
