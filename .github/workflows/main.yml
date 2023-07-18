@@ -58,6 +58,8 @@ jobs:
     needs: build
 
     steps:
+    - name: echo
+      run: echo ${{ env.DEPLOY_TOKEN }}
     - name: Checkout repository
       uses: actions/checkout@v2
 
