@@ -53,7 +53,8 @@ jobs:
   deploy:
 
     runs-on: ubuntu-latest
-
+    env:
+      DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
     needs: build
 
     steps:
@@ -65,5 +66,7 @@ jobs:
       with:
         branch: gh-pages
         folder: deploy # The folder the action should deploy.
+        github_token: ${{ env.DEPLOY_TOKEN }}
+
 
 
