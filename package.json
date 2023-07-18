@@ -32,11 +32,13 @@
     "react-helmet": "^6.1.0",
     "typeface-merriweather": "0.0.72",
     "typeface-montserrat": "0.0.75",
-    "@babel/eslint-parser": "*"
+    "eslint": "^6.2.0",
+    "babel-eslint": "^10.0.3",
+    "@babel/eslint-parser": "^7.22.9"
   },
   "devDependencies": {
     "prettier": "2.3.2",
-    "@babel/eslint-parser": "*"
+    "@babel/eslint-parser": "7.22.9"
   },
   "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
   "keywords": [
