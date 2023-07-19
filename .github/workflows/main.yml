@@ -31,7 +31,7 @@ jobs:
       run: npm install eslint-plugin-react eslint-plugin-gatsby --save-dev
       
     - name: ESLint check
-      run: npx eslint . --ext .js,.jsx
+      run: npx eslint . 
       
   build:
 
