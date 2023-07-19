@@ -22,10 +22,16 @@ jobs:
         node-version: '16'
 
     - name: Install ESLint
-      run: npm install eslint --global
+      run: npm install eslint 
 
+    - name: Init ESLint
+      run: npx eslint --init
+      
+    - name: Fix ESLint
+      run: npx eslint . --ext .js,.jsx --fix
+      
     - name: ESLint check
-      run: eslint . --ext .js,.jsx
+      run: npx eslint . --ext .js,.jsx
       
   build:
 
