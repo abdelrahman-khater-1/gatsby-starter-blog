@@ -27,8 +27,8 @@ jobs:
     - name: Init ESLint
       run: npx eslint --init
       
-    - name: Fix ESLint
-      run: npx eslint . --ext .js,.jsx --fix
+    - name: Install plugin
+      run: npm install eslint-plugin-react --save-dev
       
     - name: ESLint check
       run: npx eslint . --ext .js,.jsx
